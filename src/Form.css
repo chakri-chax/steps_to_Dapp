@@ -1,0 +1,90 @@
+.my-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #010101;
+    border-radius: 8px;
+    
+    
+  }
+  
+  .my-form input[type="text"],
+  .my-form input[type="email"],
+  .my-form textarea {
+    width: 100%;
+    padding: 10px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+    border: 1px solid #4b4747;
+    border-radius: 8px;
+    background-color: #c9e1dc;
+  }
+  
+  .my-form button {
+    background-color: #f1cccd;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: 1px solid #4b4747;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .my-form button:hover {
+    background-color: #eebbbd;
+   
+  }
+  .result-box {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .result-box h2 {
+    text-align: center;
+  }
+  
+  .result-content {
+    margin-top: 20px;
+  }
+  
+  .result-content p {
+    margin-bottom: 10px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    text-align: center;
+    font-size: 15px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+     
+     }
+
+    .home-page {
+  background: linear-gradient(to bottom right, #ACEFE1, #FABFC0);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page h1 {
+  color: black;
+  font-size: 24px;
+}
