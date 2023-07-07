@@ -56,7 +56,7 @@ const Form = () => {
         <h1 className = 'h1'align="center" >Details</h1>
             <div>
                 <label htmlFor='Student ID :'> <strong>Student ID :</strong> </label>
-                <input placeholder='N180001' type='text' onChange={(e)=>{setStudentId(e.target.value)}} value={studentId}/> <br/>
+                <input placeholder='180001' type='text' onChange={(e)=>{setStudentId(e.target.value)}} value={studentId}/> <br/>
             </div>
             <div>
                 <label htmlFor='Student Name :'><strong>Student Name :</strong> </label>
