@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Form.css'
-import abi from './abis/libraryV2.json'
+import abi from './abis/libraryV3.json'
 import { ethers } from 'ethers'
 //import {addr} from './contractAddress/libraryV2'
 const Form = () => {
@@ -23,7 +23,7 @@ const Form = () => {
         
             console.log("Details",exportPerson.studentId);
 
-            const contractAddress = '0x71ef1196d59bAdF6F28d41968e9742da2A930123'
+            const contractAddress = '0x7DbEEBDE6bE26E36fC9b1484d5902849F5e6d1c2'
             const contractABI = abi;
             const provider = new ethers.providers.Web3Provider(window.ethereum)
             const signer = provider.getSigner()
