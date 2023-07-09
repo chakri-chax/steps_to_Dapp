@@ -2,12 +2,21 @@ import React from "react";
 import { useState, useEffect } from "react";
 import abi from "./abis/libraryV3.json";
 import { ethers } from "ethers";
-import './Form.css'
+
+import { useNavigate } from "react-router-dom";
+import "./Form.css";
+
 const MyBooks = () => {
   const [books, setBooks] = useState([]);
   const [studentId, setStudentId] = useState("");
 
+  const fee = 0.01;
+  let navigate = useNavigate();
 
+  const routeChange = () => {
+    let path = `/MyBooks/TransactionQr`;
+    navigate(path);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,7 +51,8 @@ const MyBooks = () => {
 
   return (
     <>
-      
+    <div className="home-page">
+    <br/><br/>
       <form className="my-form" onSubmit={handleSubmit}>
         <h1 className="h1" align="center">
           Get Deatils
@@ -62,7 +72,6 @@ const MyBooks = () => {
           />{" "}
           <br />
         </div>
-        
 
         <br />
 
@@ -70,26 +79,35 @@ const MyBooks = () => {
           <button>My Books</button>
         </div>
       </form>
-        <div>
-          
-      <h1 align = 'center'><span></span> Hi,<strong>{studentId}</strong></h1>
-          
-      <div class="grid-container">
+      <div>
+       
 
-      {books.map((book) => {
-        const { id, _bookId, _bookName } = book;
-        return (
+        <div class="grid-container">
           
-          <div className="result-box">
-            <div key={id}>
-              <h4>Book Id :{_bookId}</h4>
-              <h4>Book Name :{_bookName}</h4>
-            </div>
-          </div>
-        );
-      })}
-      </div>
+          {books.map((book) => {
+            const { id, _bookId, _bookName } = book;
+            <h1 align="center">
+            {/* <span></span><strong>{studentId}</strong> */}
+            {
+              {studentId}?studentId:""
+            }
+          </h1>
+            return (
+              <div className="result-box">
+                <div className="center">
+                </div>
+                <div key={id}>
+                  <h4>Book Id :{_bookId}</h4>
+                  <h4>Book Name :{_bookName}</h4>
+                  <button onClick={routeChange}>{`Pay ${fee} Matics`}</button>
+                
+                </div>
+              </div>
+            );
+          })}
+        </div>
         
+      </div>
       </div>
     </>
   );
