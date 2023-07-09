@@ -12,7 +12,7 @@ const TransationQr = () => {
   
   const [pic,setPic] = useState(images[0])
   
-  
+   
   const delay = (ms) => new Promise((res) => setTimeout(res, ms));
   const handleTransaction = async () => {
     if (typeof window.ethereum !== "undefined") {
