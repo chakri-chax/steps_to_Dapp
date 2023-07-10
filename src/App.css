@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+.centerBg {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.bgImage {
+  background-image: url("./images/Library\ ui.png");
+  background-repeat: no-repeat, repeat;
+ 
+  margin-left: 250px;
+  
 }
