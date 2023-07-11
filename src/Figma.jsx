@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./Figma.css";
 import arrow from './images/arrow.png'
 
@@ -11,41 +11,9 @@ import code from './images/code.png'
 import ideabulb from './images/ideabulb.png'
 import growth from './images/growth.png'
 import pngwing from './images/pngwing.png'
-import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
 
- const Ui = () => {
-  let navigate = useNavigate();
 
-  const handleHome =()=>
-  {
-    let path = `/Form`
-    navigate(path);
-  }
-  const handleConnect=async()=>
-    {
-
-    }
-    const hadleSignUp =()=>{
-
-    }
-    const handleBorrow =()=>{
-      let path = `/Form`
-      navigate(path);
-    }
-    const handleStore =()=>{
-      let path = `/Form`
-      navigate(path);
-    }
-    const handleContact =()=>{
-      let path = `/Form`
-      navigate(path);
-    }
-    const handleLibraryClaw =()=>{
-      let path = `/Form`
-      navigate(path);
-    }
-
+ const Figma = () => {
   return (
     <div className="desktop">
       <div className="overlap-wrapper">
@@ -68,27 +36,25 @@ import { useNavigate } from "react-router-dom";
               </div>
               <div className="girl" />
               <div className="group">
-                
-                
                 <div className="connect">
                   <div className="div-wrapper">
-                    <button onClick={handleConnect} className="text-wrapper">Connect</button>
+                    <div className="text-wrapper">CONNECT</div>
                   </div>
                 </div>
                 <div className="sign-up">
                   <div className="div-wrapper">
-                    <button onClick={hadleSignUp} className="text-wrapper">SignUp</button>
+                    <div className="text-wrapper">SignUp</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="navbar">
               <img className="pngwing" alt="Pngwing" src={pngwing} />
-              <button  className="text-wrapper-2">Home</button>
-              <button onClick={handleBorrow} className="text-wrapper-3">Borrow</button>
-              <button onClick={handleStore} className="text-wrapper-4">Store</button>
-              <button onClick={handleContact} className="text-wrapper-5">Contact</button>
-              <button onClick={handleLibraryClaw} className="text-wrapper-6">Library Claw</button>
+              <div className="text-wrapper-2">Home</div>
+              <div className="text-wrapper-3">Borrow</div>
+              <div className="text-wrapper-4">Store</div>
+              <div className="text-wrapper-5">Contact</div>
+              <div className="text-wrapper-6">Library Claw</div>
             </div>
           </div>
           <div className="quotes">
@@ -131,4 +97,4 @@ import { useNavigate } from "react-router-dom";
     </div>
   );
 };
-export default Ui;
+export default Figma;

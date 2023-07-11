@@ -3,6 +3,7 @@ import ui from './images/Library ui.png'
 
 import { Outlet, Link } from "react-router-dom";
 import Ui from "./Ui";
+import Figma from "./Figma";
 const Home = () => {
   return (
     // <div className="bgImage">
