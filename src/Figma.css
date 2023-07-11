@@ -225,10 +225,10 @@
   
   .desktop .pngwing {
     height: 51px;
-    left: 0;
+    left: 30px;
     object-fit: cover;
     position: absolute;
-    top: -10px;
+    top: 0px;
     width: 50px;
   }
   
