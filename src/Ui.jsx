@@ -11,7 +11,7 @@ import code from './images/code.png'
 import ideabulb from './images/ideabulb.png'
 import growth from './images/growth.png'
 import pngwing from './images/pngwing.png'
-import { Link } from 'react-router-dom';
+
 import { useNavigate } from "react-router-dom";
 
  const Ui = () => {
