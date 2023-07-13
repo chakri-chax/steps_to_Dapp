@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Figma.css";
 import arrow from './images/arrow.png'
 
@@ -13,8 +13,33 @@ import growth from './images/growth.png'
 import pngwing from './images/pngwing.png'
 
 import { Link, useNavigate } from "react-router-dom";
+import { ethers } from 'ethers';
 
  const Ui = () => {
+  const [buttonText,setButtonText] = useState("Connect")
+  console.log("Hello");
+
+  const handleConnect = async()=>{
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    const accounts = await provider.send("eth_requestAccounts", []);
+    const balance = await provider.getBalance(accounts[0]);
+    setButtonText(truncate(accounts[0], 4, 4, 11));
+  }
+  
+  const truncate = (text, startChars, endChars, maxLength) => {
+    if (text.length > maxLength) {
+      var start = text.substring(0, startChars)
+      var end = text.substring(text.length - endChars, text.length)
+      while (start.length + end.length < maxLength) {
+        start = start + '.'
+      }
+      return start + end
+    }
+    return text
+  }
+
+
+
   let navigate = useNavigate();
 
   const handleHome =()=>
@@ -22,11 +47,7 @@ import { Link, useNavigate } from "react-router-dom";
     let path = `/`
     navigate(path);
   }
-  const handleConnect=async()=>
-    {
-      let path  = `/Connect`
-      navigate(path)
-    }
+  
     const hadleSignUp =()=>{
       let path = `/signUp`
       navigate(path)
@@ -72,7 +93,7 @@ import { Link, useNavigate } from "react-router-dom";
                 
                 <div className="connect">
                   <div className="div-wrapper">
-                    <button onClick={handleConnect} className="text-wrapper">Connect</button>
+                    <button onClick={handleConnect} className="text-wrapper">{buttonText}</button>
                   </div>
                 </div>
                 <div className="sign-up">

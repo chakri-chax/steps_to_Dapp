@@ -9,6 +9,7 @@ import FigmaBooks from "./FigmaBooks";
 import FigmaTransactions from "./FigmaTransactions";
 import { FigmaBook } from "./FigmaBook";
 import Signup from "./SignUp";
+import Form from "./Form";
 const Home = () => {
   return (
     // <div className="bgImage">
@@ -33,6 +34,8 @@ const Home = () => {
     <FigmaBooks/>
     <FigmaTransactions/>
     <FigmaBook/> */}
+    {/* <Form/>
+    <FigmaForm/> */}
     
     
     </>
