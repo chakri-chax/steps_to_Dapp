@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Figma.css";
 import logo from './images/pngwing.png'
 import physics from './images/physics.jpg'
 import search from './images/search.png'
-
+import { useNavigate } from "react-router-dom";
 
  const FigmaBooks = () => {
+
+  let navigate = useNavigate();
+  
+  
+  const handleBook1 = ()=>{
+    let path = `/Book`
+    navigate(path)
+  }
+  const handleBook = ()=>{
+    let path = `/Book`
+    navigate(path)
+  }
+ 
+ 
   return (
     <div className="books">
       <div className="div">
@@ -14,40 +28,40 @@ import search from './images/search.png'
             <div className="booksbox">
               <div className="overlap-2">
                 <div className="group">
-                  <img className="book" alt="Book" src = {physics} />
+                  <img onclick={()=>(handleBook1)}className="book" alt="Book" src = {physics} />
                   <div className="text-wrapper">Applied Physics</div>
                   <div className="text-wrapper-2">A.K.JHA</div>
                 </div>
                 <div className="group-2">
-                  <img className="img" alt="Book" src = {physics} />
+                  <img onclick={()=>handleBook}className="img" alt="Book" src = {physics} />
                   <div className="text-wrapper-3">Applied Physics</div>
                   <div className="text-wrapper-4">A.K.JHA</div>
                   <div className="group-3">
-                    <img className="book" alt="Book" src = {physics} />
+                    <img onclick={handleBook}className="book" alt="Book" src = {physics} />
                     <div className="text-wrapper">Applied Physics</div>
                     <div className="text-wrapper-2">A.K.JHA</div>
                     <div className="group-4">
-                      <img className="book" alt="Book" src = {physics} />
+                      <img onclick={handleBook}className="book" alt="Book" src = {physics} />
                       <div className="text-wrapper">Applied Physics</div>
                       <div className="text-wrapper-2">A.K.JHA</div>
                     </div>
                   </div>
                   <div className="group-5">
-                    <img className="book" alt="Book" src = {physics} />
+                    <img onclick={handleBook}className="book" alt="Book" src = {physics} />
                     <div className="text-wrapper">Applied Physics</div>
                     <div className="text-wrapper-2">A.K.JHA</div>
                   </div>
                 </div>
                 <div className="group-6">
-                  <img className="book-2" alt="Book" src = {physics} />
+                  <img onclick={handleBook}className="book-2" alt="Book" src = {physics} />
                   <div className="text-wrapper">Applied Physics</div>
                   <div className="text-wrapper-2">A.K.JHA</div>
                   <div className="group-7">
-                    <img className="book" alt="Book" src = {physics} />
+                    <img onclick={handleBook}className="book" alt="Book" src = {physics} />
                     <div className="text-wrapper">Applied Physics</div>
                     <div className="text-wrapper-2">A.K.JHA</div>
                     <div className="group-4">
-                      <img className="book" alt="Book" src = {physics} />
+                      <img onClick={handleBook}className="book" alt="Book" src = {physics} />
                       <div className="text-wrapper">Applied Physics</div>
                       <div className="text-wrapper-2">A.K.JHA</div>
                     </div>
@@ -64,7 +78,7 @@ import search from './images/search.png'
           </div>
           <div className="about-book">
             <h1 className="h-1">About the Book</h1>
-            <img className="book-3" alt="Book" src = {physics} />
+            <img onClick={handleBook} className="book-3" alt="Book" src = {physics} />
             <div className="text-wrapper-6">Applied physics</div>
             <div className="text-wrapper-7">A.K.JHA</div>
             <div className="review-box">

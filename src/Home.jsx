@@ -26,12 +26,13 @@ const Home = () => {
     //     </ul>
     //   </nav> */}
     // </div>
-
-    // <Ui/>
-    // <FigmaForm/>
-    // <FigmaBooks/>
-    // <FigmaTransactions/>
-    <FigmaBook/>
+<>
+    <Ui/>
+    {/* <FigmaForm/>
+    <FigmaBooks/>
+    <FigmaTransactions/>
+    <FigmaBook/> */}
+    </>
   );
 };
 

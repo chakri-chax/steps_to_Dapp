@@ -19,14 +19,17 @@ import { useNavigate } from "react-router-dom";
 
   const handleHome =()=>
   {
-    let path = `/Form`
+    let path = `/`
     navigate(path);
   }
   const handleConnect=async()=>
     {
-
+      let path  = `/Connect`
+      navigate(path)
     }
     const hadleSignUp =()=>{
+      let path = `/signUp`
+      navigate(path)
 
     }
     const handleBorrow =()=>{
@@ -34,7 +37,7 @@ import { useNavigate } from "react-router-dom";
       navigate(path);
     }
     const handleStore =()=>{
-      let path = `/Form`
+      let path = `/myBooks`
       navigate(path);
     }
     const handleContact =()=>{
@@ -87,7 +90,7 @@ import { useNavigate } from "react-router-dom";
               <button  className="text-wrapper-2">Home</button>
               <button onClick={handleBorrow} className="text-wrapper-3">Borrow</button>
               <button onClick={handleStore} className="text-wrapper-4">Store</button>
-              <button onClick={handleContact} className="text-wrapper-5">Contact</button>
+              <button onClick={handleContact} className="text-wrapper-5">Pay Fee</button>
               <button onClick={handleLibraryClaw} className="text-wrapper-6">Library Claw</button>
             </div>
           </div>
@@ -106,12 +109,18 @@ import { useNavigate } from "react-router-dom";
           </div>
           <div className="footer-books">
             <div className="group-2">
+
               <div className="book">
-                <img className="img" alt="Book" src={book2}/>
+                <img className="book-2" alt="Book" src={book2}/>
               </div>
+              
+
               <div className="book-wrapper">
                 <img className="book-2" alt="Book" src={book5}/>
               </div>
+
+              
+
               <div className="overlap-group-wrapper">
                 <div className="overlap-group-3">
                   <img className="book-3" alt="Book" src={book3}/>
