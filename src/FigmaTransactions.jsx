@@ -1,8 +1,17 @@
 import React from "react";
 import "./Figma.css";
 import logo from './images/pngwing.png'
-
+import { useNavigate } from "react-router-dom";
  const FigmaTransactions = () => {
+  let navigate = useNavigate()
+
+  const handleHome = ()=>{
+    navigate(`/`)
+  }
+
+  const handleBorrow =()=> navigate(`/Borrow`)
+  const handleStore =()=> navigate(`/MyBooks`)
+  const handleLibraryClaw =()=> navigate(`/LibraryClaw`)
   return (
     <div className="transaction-page">
       <div className="div">
@@ -61,16 +70,16 @@ import logo from './images/pngwing.png'
         </div>
         <div className="connect">
           <div className="div-wrapper">
-            <div className="text-wrapper-2">CONNECT</div>
+            <button className="text-wrapper-2">CONNECT</button>
           </div>
         </div>
         <div className="navbar">
           <img className="pngwing" alt="Pngwing" src={logo} />
-          <div className="text-wrapper-3">Home</div>
-          <div className="text-wrapper-4">Borrow</div>
-          <div className="text-wrapper-5">Store</div>
-          <div className="text-wrapper-6">Contact</div>
-          <div className="text-wrapper-7">Library Claw</div>
+          <button onClick={handleHome} className="text-wrapper-3">Home</button>
+          <button onClick={handleBorrow}className="text-wrapper-4" >Borrow</button>
+          <button onClick={handleStore}className="text-wrapper-5">Store</button>
+          <button className="text-wrapper-6">Pay Fee</button>
+          <button onClick={handleLibraryClaw}className="text-wrapper-7">Library Claw</button>
         </div>
         <div className="group-3">
           <div className="overlap-2" />

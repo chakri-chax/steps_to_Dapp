@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Figma.css";
 import logo from './images/pngwing.png'
 import physics from './images/physics.jpg'
@@ -7,19 +7,15 @@ import { useNavigate } from "react-router-dom";
 
  const FigmaBooks = () => {
 
-  let navigate = useNavigate();
+    let navigate = useNavigate()
+    const handleHome = ()=>navigate(`/`)
+    const handleStore = ()=>navigate(`/MyBooks`)
+    const handleBorrow = ()=>navigate(`/Borrow`)
+    const handlePayFee = ()=>navigate(`/MyBooks/TransactionQr`)
+
   
+
   
-  const handleBook1 = ()=>{
-    let path = `/Book`
-    navigate(path)
-  }
-  const handleBook = ()=>{
-    let path = `/Book`
-    navigate(path)
-  }
- 
- 
   return (
     <div className="books">
       <div className="div">
@@ -27,41 +23,41 @@ import { useNavigate } from "react-router-dom";
           <div className="overlap-group">
             <div className="booksbox">
               <div className="overlap-2">
-                <div className="group">
-                  <img onclick={()=>(handleBook1)}className="book" alt="Book" src = {physics} />
+                <div  className="group">
+                  <img className="book" alt="Book" src = {physics} />
                   <div className="text-wrapper">Applied Physics</div>
                   <div className="text-wrapper-2">A.K.JHA</div>
                 </div>
                 <div className="group-2">
-                  <img onclick={()=>handleBook}className="img" alt="Book" src = {physics} />
+                  <img className="img" alt="Book" src = {physics} />
                   <div className="text-wrapper-3">Applied Physics</div>
                   <div className="text-wrapper-4">A.K.JHA</div>
                   <div className="group-3">
-                    <img onclick={handleBook}className="book" alt="Book" src = {physics} />
+                    <img className="book" alt="Book" src = {physics} />
                     <div className="text-wrapper">Applied Physics</div>
                     <div className="text-wrapper-2">A.K.JHA</div>
                     <div className="group-4">
-                      <img onclick={handleBook}className="book" alt="Book" src = {physics} />
+                      <img  className="book" alt="Book" src = {physics} />
                       <div className="text-wrapper">Applied Physics</div>
                       <div className="text-wrapper-2">A.K.JHA</div>
                     </div>
                   </div>
                   <div className="group-5">
-                    <img onclick={handleBook}className="book" alt="Book" src = {physics} />
+                    <img  className="book" alt="Book" src = {physics} />
                     <div className="text-wrapper">Applied Physics</div>
                     <div className="text-wrapper-2">A.K.JHA</div>
                   </div>
                 </div>
                 <div className="group-6">
-                  <img onclick={handleBook}className="book-2" alt="Book" src = {physics} />
+                  <img  className="book-2" alt="Book" src = {physics} />
                   <div className="text-wrapper">Applied Physics</div>
                   <div className="text-wrapper-2">A.K.JHA</div>
                   <div className="group-7">
-                    <img onclick={handleBook}className="book" alt="Book" src = {physics} />
+                    <img  className="book" alt="Book" src = {physics} />
                     <div className="text-wrapper">Applied Physics</div>
                     <div className="text-wrapper-2">A.K.JHA</div>
                     <div className="group-4">
-                      <img onClick={handleBook}className="book" alt="Book" src = {physics} />
+                      <img  className="book" alt="Book" src = {physics} />
                       <div className="text-wrapper">Applied Physics</div>
                       <div className="text-wrapper-2">A.K.JHA</div>
                     </div>
@@ -78,7 +74,7 @@ import { useNavigate } from "react-router-dom";
           </div>
           <div className="about-book">
             <h1 className="h-1">About the Book</h1>
-            <img onClick={handleBook} className="book-3" alt="Book" src = {physics} />
+            <img   className="book-3" alt="Book" src = {physics} />
             <div className="text-wrapper-6">Applied physics</div>
             <div className="text-wrapper-7">A.K.JHA</div>
             <div className="review-box">
@@ -101,11 +97,11 @@ import { useNavigate } from "react-router-dom";
               Our life is dependent on light and we cannot imagine our life without light. Naturally, from very early
               days, human beings must have wondered about the nature of light. Simple and ........
             </p>
-            <div className="connect">
+            <button  className="connect">
               <div className="div-wrapper">
-                <div className="text-wrapper-11">Read</div>
+                <button  className="text-wrapper-11">Read</button>
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <div className="overlap-group-wrapper">
@@ -115,12 +111,12 @@ import { useNavigate } from "react-router-dom";
         </div>
         <div className="navbar">
           <img className="pngwing" alt="Pngwing" src={logo} />
-          <div className="text-wrapper-13">Home</div>
-          <div className="text-wrapper-14">Borrow</div>
-          <div className="text-wrapper-15">Store</div>
-          <div className="text-wrapper-16">Contact</div>
-          <div className="text-wrapper-17">Library Claw</div>
-        </div>
+          <button onClick={ handleHome} className="text-wrapper-13">Home</button >
+          <button onClick={ handleBorrow} className="text-wrapper-14">Borrow</button >
+          <button onClick={ handleStore} className="text-wrapper-15">Store</button >
+          <button onClick={ handlePayFee} className="text-wrapper-16">Pay Fee</button >
+          <button  className="text-wrapper-17">Library Claw</button >
+        </div> 
       </div>
     </div>
   );

@@ -2,8 +2,41 @@ import React from "react";
 import "./Figma.css";
 import logo from './images/pngwing.png'
 import booksTree from './images/bookTree.png'
+import { useNavigate } from "react-router-dom";
 
  const FigmaForm = () => {
+  let navigate = useNavigate();
+
+  const handleHome =()=>
+  {
+    let path = `/`
+    navigate(path);
+  }
+  const handleConnect=async()=>
+    {
+      let path  = `/Connect`
+      navigate(path)
+    }
+    const hadleSignUp =()=>{
+      let path = `/signUp`
+      navigate(path)
+
+    }
+    const handleBorrow =()=>{
+      let path = `/Borrow`
+      navigate(path);
+    }
+    const handleStore =()=>{
+      let path = `/MyBooks`
+      navigate(path);
+    }
+    const handlePayFee =()=>{
+      let path = `/MyBooks/TransactionQr`
+      navigate(path);
+    }
+   
+
+
   return (
     <div className="form">
       <div className="div">
@@ -14,11 +47,11 @@ import booksTree from './images/bookTree.png'
         </div>
         <div className="navbar">
           <img className="pngwing" alt="Pngwing" src={logo} />
-          <h1 className="h-1">Home</h1>
-          <div className="text-wrapper-2">Borrow</div>
-          <div className="text-wrapper-3">Store</div>
-          <div className="text-wrapper-4">Contact</div>
-          <div className="text-wrapper-5">Library Claw</div>
+          <button onClick={handleHome} className="h-1">Home</button>
+          <button onClick={handleBorrow}  className="text-wrapper-2">Borrow</button>
+          <button onClick={handleStore} className="text-wrapper-3">Store</button>
+          <button onClick={handlePayFee} className="text-wrapper-4">Pay Fee</button>
+          <button  className="text-wrapper-5">Library Claw</button> 
         </div>
         <div className="overlap">
           <div className="form-wrapper">

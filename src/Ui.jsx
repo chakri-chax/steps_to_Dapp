@@ -12,7 +12,7 @@ import ideabulb from './images/ideabulb.png'
 import growth from './images/growth.png'
 import pngwing from './images/pngwing.png'
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
  const Ui = () => {
   let navigate = useNavigate();
@@ -33,21 +33,18 @@ import { useNavigate } from "react-router-dom";
 
     }
     const handleBorrow =()=>{
-      let path = `/Form`
+      let path = `/Borrow`
       navigate(path);
     }
     const handleStore =()=>{
-      let path = `/myBooks`
+      let path = `/MyBooks`
       navigate(path);
     }
-    const handleContact =()=>{
-      let path = `/Form`
+    const handlePayFee =()=>{
+      let path = "MyBooks/TransactionQr"
       navigate(path);
     }
-    const handleLibraryClaw =()=>{
-      let path = `/Form`
-      navigate(path);
-    }
+   
 
   return (
     <div className="desktop">
@@ -90,8 +87,18 @@ import { useNavigate } from "react-router-dom";
               <button  className="text-wrapper-2">Home</button>
               <button onClick={handleBorrow} className="text-wrapper-3">Borrow</button>
               <button onClick={handleStore} className="text-wrapper-4">Store</button>
-              <button onClick={handleContact} className="text-wrapper-5">Pay Fee</button>
-              <button onClick={handleLibraryClaw} className="text-wrapper-6">Library Claw</button>
+              <button onClick={handlePayFee} className="text-wrapper-5">Pay Fee</button>
+
+              {/* <Link className='text-wrapper-6' href="http://geeksforgeeks.org/"
+                onClick={() => {
+                    alert("Redirecting to GeeksforGeeks");
+                }}>Library Claw
+              </Link> */}
+              <a href="https://cosmoclaw.com/">
+              <button  className="text-wrapper-6">Library Claw</button>
+
+              </a>
+              
             </div>
           </div>
           <div className="quotes">

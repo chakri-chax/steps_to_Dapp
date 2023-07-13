@@ -23,13 +23,7 @@ import { useNavigate } from "react-router-dom";
       let path = `/Form`
       navigate(path);
     }
-
-
-    const handleConnect=async()=>
-      {
-        let path  = `/Connect`
-        navigate(path)
-      }
+    
       const hadleSignUp =()=>{
         let path = `/signUp`
         navigate(path)

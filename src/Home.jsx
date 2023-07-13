@@ -8,6 +8,7 @@ import FigmaForm from "./FigmaForm";
 import FigmaBooks from "./FigmaBooks";
 import FigmaTransactions from "./FigmaTransactions";
 import { FigmaBook } from "./FigmaBook";
+import Signup from "./SignUp";
 const Home = () => {
   return (
     // <div className="bgImage">
@@ -32,6 +33,8 @@ const Home = () => {
     <FigmaBooks/>
     <FigmaTransactions/>
     <FigmaBook/> */}
+    
+    
     </>
   );
 };
