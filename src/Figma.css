@@ -1771,6 +1771,12 @@
   top: 100px;
   width: 700px;
 }
+.transaction-page .myQrPosition{
+ 
+  left: 246px;
+  top: 205px;
+  position: relative;
+}
 
 .transaction-page .group-4 {
   height: 725px;

@@ -2,6 +2,10 @@ import React from "react";
 import "./Figma.css";
 import logo from './images/pngwing.png'
 import { useNavigate } from "react-router-dom";
+import Qr from './images/QR.png'
+import load1 from './images/load1.gif'
+import tick from './images/tick.gif'
+
  const FigmaTransactions = () => {
   let navigate = useNavigate()
 
@@ -82,9 +86,11 @@ import { useNavigate } from "react-router-dom";
           <button onClick={handleLibraryClaw}className="text-wrapper-7">Library Claw</button>
         </div>
         <div className="group-3">
-          <div className="overlap-2" />
+          <div className="overlap-2" >
+            <img className="myQrPosition" src={tick} alt="QR Image"/>
+          </div>
         </div>
-        <div className="group-4">
+        {/* <div className="group-4">
           <img className="form" alt="Form" src="form.png" />
           <div className="group-5">
             <img className="book" alt="Book" src="book4-1.png" />
@@ -126,7 +132,7 @@ import { useNavigate } from "react-router-dom";
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
