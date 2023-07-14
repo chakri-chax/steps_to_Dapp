@@ -9,7 +9,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    width: 80%;
+   
+    
   }
   
   .desktop .overlap-wrapper {
@@ -217,7 +219,7 @@
   
   .desktop .navbar {
     height: 54px;
-    left: 0;
+    left: -30px;
     position: absolute;
     top: 37px;
     width: 920px;
@@ -492,7 +494,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    width: 90%;
   }
   
   .form .div {
@@ -1496,7 +1498,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  
+  
 }
 
 .transaction-page .div {
@@ -1506,10 +1509,11 @@
   overflow: hidden;
   position: relative;
   width: 1920px;
+
 }
 
 .transaction-page .overlap {
-  background-color: #dcc4c4f0;
+  background-color: #fffffff0;
   border-radius: 425px;
   height: 850px;
   left: 96px;
@@ -1761,10 +1765,11 @@
   background-position: 50% 50%;
   background-size: cover;
   border-radius: 424.08px;
-  height: 848px;
+  height: 700px;
   left: 2px;
   position: relative;
-  width: 848px;
+  top: 100px;
+  width: 700px;
 }
 
 .transaction-page .group-4 {

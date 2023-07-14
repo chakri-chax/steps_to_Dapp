@@ -5,28 +5,37 @@ import booksTree from './images/bookTree.png'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ethers } from "ethers";
-
+import buttonText from './Ui'
 import abi from './abis/libraryV3.json'
+import Popup from 'reactjs-popup';
+
+import { toast } from "react-toastify";
+
  const FigmaForm = () => {
+  
 
   const [studentId,setStudentId] = useState("")
   const [studentName,setStudentName] = useState("")
   const [bookId,setBookId] =useState("")
   const [bookName,setBookName]= useState("")
-  const [buttonText,setButtonText] = useState("Borrow Book")
+  const [buttonText,setButtonText] = useState("Connect")
+  const [bookButton,setBookButton ] = useState("Borrow Book")
 
   const [people,setPeople] = useState([])
 
 
   const handleSubmit=async(e)=>
-      {
-          e.preventDefault()
+  
+      {e.preventDefault()
+       
+          
+          
           const person = {id:new Date().getTime().toString(),
                           studentId,studentName,bookId,bookName}
           const exportPerson = {studentId,studentName,bookId,bookName}
       
           console.log("Details",exportPerson.studentId);
-
+          if(window.ethereum){
           const contractAddress = '0x7DbEEBDE6bE26E36fC9b1484d5902849F5e6d1c2'
           const contractABI = abi;
           const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -36,6 +45,7 @@ import abi from './abis/libraryV3.json'
 
           await Borrow.wait()
           
+          
 
          
 
@@ -43,7 +53,10 @@ import abi from './abis/libraryV3.json'
           setPeople((people)=>{
                   return [...people,person]
           })     
+      }else {
+          alert("Please Connect metamask")
       }
+    }
 
       const handleData = ()=>{
         setStudentId("")
@@ -52,6 +65,34 @@ import abi from './abis/libraryV3.json'
        setBookName("")
       }
 
+      const ButtonText = async()=>{
+        if(window.ethereum){
+          
+      
+        const truncate = (text, startChars, endChars, maxLength) => {
+          if (text.length > maxLength) {
+            var start = text.substring(0, startChars)
+            var end = text.substring(text.length - endChars, text.length)
+            while (start.length + end.length < maxLength) {
+              start = start + '.'
+            }
+            return start + end
+          }
+          return text
+        }
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        const accounts = await provider.send("eth_requestAccounts", []);
+        const balance = await provider.getBalance(accounts[0]);
+        setButtonText(truncate(accounts[0],4,4,11))
+
+      
+        
+      
+        }else{
+          alert("Install metamask")
+        }  
+      
+      }
 
 
   let navigate = useNavigate();
@@ -91,7 +132,7 @@ import abi from './abis/libraryV3.json'
       <div className="div">
         <div className="connect">
           <div className="overlap-group">
-            <div className="text-wrapper">CONNECT</div>
+            <button onClick={ButtonText} className="text-wrapper">{buttonText}</button>
           </div>
         </div>
         <div className="navbar">
@@ -156,7 +197,7 @@ import abi from './abis/libraryV3.json'
     
 
    <div class="center">
-        <button onClick={handleData}>{buttonText}</button>
+        <button onClick={handleData}>{bookButton}</button>
     </div>
 
 
@@ -222,6 +263,8 @@ import abi from './abis/libraryV3.json'
         </div>
       </div>
     </div>
+
+       
   );
 };
 export default FigmaForm;
