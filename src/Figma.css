@@ -1160,13 +1160,14 @@
     font-family: "Inter-Regular", Helvetica;
     font-size: 24px;
     font-weight: 400;
-    height: 62px;
-    left: 76px;
+    height: 50px;
+    left: 10px;
+    border-radius: 32px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 6px;
-    width: 424px;
+    top: 8px;
+    width: 950px;
   }
   
   .books .search-2 {
@@ -1183,6 +1184,8 @@
     position: absolute;
     top: 47px;
     width: 369px;
+    align-items: center;
+    
   }
   
   .books .h-1 {
@@ -1220,24 +1223,28 @@
     line-height: normal;
     position: absolute;
     text-align: center;
-    top: 286px;
+    top: 270px;
     width: 259px;
   }
   
   .books .text-wrapper-7 {
     color: #ffffff;
     font-family: "Inter-Bold", Helvetica;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
-    height: 19px;
-    left: 101px;
+    height: 30px;
+    padding: 10px;
+    left:10%;
+    
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
     text-align: center;
-    top: 322px;
-    white-space: nowrap;
-    width: 164px;
+    top: 350px;
+    
+    width: 300px;
+    align-items: center;
+    
   }
   
   .books .review-box {
@@ -1247,7 +1254,7 @@
     height: 59px;
     left: 53px;
     position: absolute;
-    top: 377px;
+    top: 420px;
     width: 260px;
   }
   
@@ -1355,7 +1362,18 @@
     border-radius: 39px;
     height: 60px;
     position: relative;
-    width: 306px;
+    width: 100px;
+    left: 10%;
+  }
+
+  .books .div-wrapperBorrow {
+    background-color: #12152ef5;
+    border-radius: 39px;
+    height: 55px;
+    position: relative;
+    width: 100px;
+    left:200%;
+    top: 674px;
   }
   
   .books .text-wrapper-11 {
@@ -1364,7 +1382,7 @@
     font-size: 20px;
     font-weight: 700;
     height: 41px;
-    left: 22px;
+    left: -85px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -2235,3 +2253,30 @@
   width: 894px;
 }
 
+.books .grid-container {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 250px 250px 250px  ;
+  gap: 10px;
+  /* background-color: #d77d7d; */
+  padding: 20px;
+  margin-left: 80px;
+  align-items: center;
+  
+}
+
+.books.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 15px;
+  align-items: center;
+}
+
+.books.grid-container.img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  width: 100px;
+  height: 150px;
+}
