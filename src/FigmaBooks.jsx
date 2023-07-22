@@ -7,15 +7,14 @@ import searchLogo from "./images/search.png";
 import { useNavigate } from "react-router-dom";
 
 const FigmaBooks = () => {
-  
   const [search, setSearch] = useState("");
   const [id, setId] = useState("");
   let navigate = useNavigate();
   const handleHome = () => navigate(`/`);
+  const handleRead = () => navigate(`/Book`);
   const handleStore = () => navigate(`/MyBooks`);
   const handleBorrow = () => navigate(`/Borrow`);
-  const handlePayFee = () => navigate(`/MyBooks/TransactionQr`);
-  
+  const handleTransactions = () => navigate(`/MyBooks/TransactionQr`);
 
   const [data, setData] = useState([]);
   const api = new GoogleBooksAPI({
@@ -23,7 +22,6 @@ const FigmaBooks = () => {
   });
 
   async function fetchBooks() {
-  
     const books = await api.search({
       filters: {
         title: search,
@@ -39,8 +37,7 @@ const FigmaBooks = () => {
 
   useEffect((e) => {
     // e.preventDefault()
-    
-    
+
     console.log("search", search);
   }, []);
 
@@ -52,12 +49,10 @@ const FigmaBooks = () => {
   const [plot, setPlot] = useState("Not Available");
 
   const handleSearch = (evt) => {
-
-    if(evt.key === "Enter"){ 
+    if (evt.key === "Enter") {
       fetchBooks();
       console.log("Hello");
-      setSearch("")
-
+      setSearch("");
     }
   };
 
@@ -94,10 +89,8 @@ const FigmaBooks = () => {
 
                       <h3>
                         Title <br /> {book.volumeInfo.title}
-                        
                       </h3>
                       <h4>Author : {book.volumeInfo.authors}</h4>
-                   
 
                       <button
                         onClick={() => {
@@ -172,7 +165,9 @@ const FigmaBooks = () => {
             </p>
             <button className="connect">
               <div className="div-wrapper">
-                <button className="text-wrapper-11">Read</button>
+                <button onClick={handleRead} className="text-wrapper-11">
+                  Read
+                </button>
               </div>
             </button>
 
@@ -201,13 +196,13 @@ const FigmaBooks = () => {
           <button onClick={handleStore} className="text-wrapper-15">
             Store
           </button>
-          <button onClick={handlePayFee} className="text-wrapper-16">
-            Pay Fee
+          <button onClick={handleTransactions} className="text-wrapper-16">
+            Transactions
           </button>
           <button className="text-wrapper-17">Library Claw</button>
         </div>
       </div>
     </div>
   );
-};
-export default FigmaBooks;
+};//delete
+export default FigmaBooks; 
